@@ -1,0 +1,33 @@
+Project Proposal: Snake
+Eric Hayes, Cooper Frederick
+Section E
+
+Problem Description:
+This project recreates the classic arcade game "Snake" in which the player controls a moving line which represents a snake.
+The player aims to eat apples to grow larger and aims to avoid running into itself or the walls. The player wins by filling the 
+entire screen with the snake.
+
+Program Documentation:
+Our program uses SFML, which is included in the submission for user ease. The user only needs to run the program for it to work, then
+use arrow keys to play the game. The game starts with the snake already moving and the snake cannot stop moving. The program uses two
+classes and a struct, all in their own header files and the classes have their own implementation files. For modification, each class
+can be easily edited to allow the user to change the size of their window and they can edit the Grid class to change the size of the grid
+from 20x20. If we had more time, we would have added a way to check if the player had won the game (all tiles of the grid are filled with snake)
+and we would have added score keeping that could remember previous high scores through file input and output. To check that the user won, we
+would compare the size of the vector that stores the snake position to the size of the grid, and if they are equal the user has won.
+
+Tests:
+Both authors of this program have played the game repeatedly to test for bugs. This allowed us to catch and fix a bug where if the user pressed the 
+arrow key corresponding to the opposite direction they are already going, then the snake would freeze. One bug that we were unable to fix
+is if the user turns at the same time as they hit the wall, then a collision is not detected and the player goes off screen and can come back on.
+Neither author could determine what caused this. We initially thought that the collision detection was just checking the wrong element of
+the snake vector, so for collision detection we looped through the entire snake vector and checked for collision with the wall. This did
+not fix the issue. Another issue that was caught and fixed was the program detecting the snake colliding with itself a block early. This was
+simply a visual bug that occured due to collision detecting happening before the window display. Once the collision detection was moved behind
+the window display, this bug disappeared. 
+
+Reflections:
+Both authors learned how to create a grid in SFML based on an amount of pixels. We also learned how to make an SFML object be dynamic and to
+interact with the grid we created. We learned about the importance of order when using SFML from the bug about the snake colliding
+with itself too early. Going into this project, neither author was very familiar with classes or SFML, and both feel that they learned
+much about both of those things and how to use them together. 
